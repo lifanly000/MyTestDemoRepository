@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+     <FrameLayout
+        android:id="@+id/video_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone" >
+    </FrameLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#00A5FB" >
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/single_match_title_back" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="报告内容"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/share"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:visibility="gone" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/single_match_title_back" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/ll_whole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp" >
+
+                <ImageView
+                    android:id="@+id/userIcon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/user_center_user_icon" />
+
+                <RelativeLayout
+                    android:layout_width="160dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:id="@+id/userName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#00A5FB"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/userType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_toRightOf="@id/userName"
+                        android:background="#12AAFA"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/userName"
+                        android:textColor="#B8B8B8"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlfortest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:visibility="gone" >
+
+                    <TextView
+                        android:id="@+id/text001"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:textColor="#FB4700"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/text002"
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:layout_below="@id/text001"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:background="#FB4700"
+                        android:gravity="center"
+                        android:text="购买完整版"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#d4d4d4" />
+
+            <TextView
+                android:id="@+id/todayHomeWork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="今日作业"
+                android:textColor="#00a5fb"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/homeworkcontent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:lineSpacingMultiplier="1.2"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:textColor="#dd282828"
+                android:textSize="16sp" />
+
+             <RelativeLayout
+                    android:id="@+id/homeWorkImage1"
+                    android:layout_width="160dp"
+                    android:layout_height="30dp"
+                    android:visibility="gone"
+                    android:layout_marginLeft="10dp"
+               		 android:layout_marginTop="10dp"
+                    android:background="@drawable/learn_icon_blue" >
+                    <TextView 
+                        android:id="@+id/voiceTime1"
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:layout_centerInParent="true"
+                        android:layout_marginTop="2dp"
+                        android:background="@drawable/learn_playing"
+                        />
+                    <TextView 
+                        android:id="@+id/voiceTimeRight1"
+                        android:layout_toRightOf="@id/voiceTime1"
+                        android:textColor="#FFFFFF"
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:layout_centerVertical="true"
+                    	android:layout_marginLeft="12dp"
+                        />
+                 </RelativeLayout>
+
+             <com.example.wireframe.view.ListViewInScroll
+                 android:id="@+id/cndy_listView"
+                 android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="0dp"
+                android:divider="@null"
+                 />
+            <TextView
+                android:id="@+id/myHomeWork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="我的作业"
+                android:textColor="#00a5fb"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/LL_mySendHomeWork"
+                android:visibility="invisible"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:id="@+id/homeWorkImage2"
+                    android:layout_width="60dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/learn_icon_blue" >
+                    <TextView 
+                        android:id="@+id/voiceTime"
+                        android:textColor="#FB4700"
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:layout_centerInParent="true"
+                        android:layout_marginTop="2dp"
+                        />
+                    <TextView 
+                        android:id="@+id/voiceTimeRight"
+                        android:layout_toRightOf="@id/voiceTime"
+                        android:textColor="#FFFFFF"
+                        android:visibility="invisible"
+                        android:layout_width="wrap_content"
+                    	android:layout_height="wrap_content"
+                    	android:layout_centerVertical="true"
+                    	android:layout_marginLeft="15dp"
+                        />
+                 </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/sendMyHomework"
+                    android:layout_width="60sp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="1"
+                    android:background="#0000FF"
+                    android:gravity="center"
+                    android:text="发送"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="30dp" >
+
+                <Button
+                 	android:id="@+id/doHomeWorkBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/voice_btn_selector" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:id="@+id/voiceIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/learn_voice_1" />
+
+                    <TextView
+                        android:id="@+id/voiceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:gravity="center"
+                        android:text="长按我做作业"
+                        android:textColor="#aa00a5fb"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

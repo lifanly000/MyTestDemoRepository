@@ -1,0 +1,16 @@
+<resources>
+
+    <drawable name="tab_red">#b61616</drawable>
+    <drawable name="tab_gray">#434a54</drawable>
+    <drawable name="clean">#00000000</drawable>
+    <drawable name="write">#ffffffff</drawable>
+    <drawable name="tab_skip_f">#ff555c65</drawable>
+    <drawable name="gray">#ff808080</drawable>
+    <drawable name="grayAlpha">#e0808080</drawable>
+    <drawable name="grayCCC">#ffcccccc</drawable>
+    <drawable name="grayCCCAlpha">#e0cccccc</drawable>
+    
+	<!-- 4.0新增 -->
+    <drawable name="title_2">#f2f2f2</drawable>
+    
+</resources>

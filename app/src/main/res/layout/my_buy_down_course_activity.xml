@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#00A5FB" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="线下课程"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/single_match_title_back" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/item2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:text="课程类别A-课程1"
+            android:textColor="#242424"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/arrow2"
+            android:layout_toRightOf="@id/title"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="共60个课时"
+            android:textColor="#242424"
+            android:textSize="16sp" />
+        <RelativeLayout 
+            android:id="@+id/courseIntroduce"
+            android:layout_width="67dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            
+            >
+             <TextView
+	            android:id="@+id/text10"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_centerVertical="true"
+	            android:gravity="center"
+	            android:text="课程简介"
+	            android:textColor="#00A5FB"
+	            android:textSize="16sp" />
+             <View 
+                 android:layout_below="@id/text10"
+                 android:layout_width="match_parent"
+	            android:layout_height="0.5dp"
+                 android:background="#00A5FB"
+                 
+                 />
+            
+            
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#d4d4d4" />
+
+    <RelativeLayout
+        android:id="@+id/item9"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="主讲老师："
+            android:textStyle="bold"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/teacherName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/text1"
+            android:gravity="center"
+            android:text="Xiaoxiao Liu"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/item3"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="地区："
+            android:textStyle="bold"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/locationName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/text2"
+            android:gravity="center"
+            android:text="北京市海淀区"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/item4"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="校区："
+            android:textStyle="bold"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/schoolLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/text3"
+            android:gravity="center"
+            android:text="北京市海淀区"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/item5"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginTop="30dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="学员："
+            android:textStyle="bold"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/studentName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/text4"
+            android:gravity="center"
+            android:text="小明"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/item6"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="联系方式："
+            android:textStyle="bold"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/studentTelphone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/text5"
+            android:gravity="center"
+            android:text="18501348397"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/text6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:text="选择课时："
+        android:textColor="#242424"
+        android:textSize="14sp" />
+	<LinearLayout 
+	    android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+	    android:orientation="horizontal"
+	    android:paddingLeft="20dp"
+	    android:paddingRight="20dp"
+	    >
+	    <TextView 
+	        android:id="@+id/courseTime1"
+	        android:layout_width="40dp"
+        	android:layout_height="match_parent"
+	        android:background="@drawable/v4_gradient_box_white"
+	      	android:text="20课时"
+	      	android:textColor="#818181"
+	      	android:gravity="center"
+	      	android:layout_weight="1"
+	        />
+	    <TextView 
+	        android:id="@+id/courseTime2"
+	        android:layout_width="40dp"
+        	android:layout_height="match_parent"
+	        android:background="@drawable/v4_gradient_box_white"
+	      	android:text="40课时"
+	      	android:textColor="#818181"
+	      	android:layout_marginLeft="10dp"
+	      	android:gravity="center"
+	      	android:layout_weight="1"
+	        />
+	    <TextView 
+	        android:id="@+id/courseTime3"
+	        android:layout_width="40dp"
+        	android:layout_height="match_parent"
+	        android:background="@drawable/v4_gradient_box_white"
+	      	android:text="60课时"
+	      	android:textColor="#818181"
+	      	android:layout_marginLeft="10dp"
+	      	android:gravity="center"
+	      	android:layout_weight="1"
+	        />
+	    
+	</LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/item7"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="25dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/text7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="学费："
+            android:textColor="#242424"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/cost"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/text7"
+            android:gravity="center"
+            android:text="3500  "
+            android:textColor="#444444"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/item8"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:id="@+id/text8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:text="有效期"
+            android:textColor="#242424"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/validTime"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/text8"
+            android:gravity="center"
+            android:text="购买日。。。。"
+            android:textColor="#444444"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <TextView
+            android:id="@+id/btn1"
+            android:layout_width="40dp"
+            android:layout_height="44dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/v4_gradient_box_whole_blue"
+            android:gravity="center"
+            android:text="联系客服"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/btn2"
+            android:layout_width="40dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/v4_gradient_box_whole_red"
+            android:gravity="center"
+            android:text="确认续费"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:background="#FB4700"
+        android:text="购买完整版"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

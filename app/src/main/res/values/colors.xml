@@ -1,0 +1,49 @@
+<resources>
+
+    <color name="tab_bg">#ffffff</color>
+    <color name="bg">#FFE8EAEF</color>
+    <color name="main_red">#00a5fb</color>
+    <color name="main_fc_9">#ff999999</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#0084E4</color>
+    <color name="red">#ffff0000</color>
+    <color name="green">#94B922</color>
+    <color name="green1">#017427</color>
+    <color name="black">#000000</color>
+    <color name="gray">#909090</color>
+    <color name="ghostwhite">#F8F8FF</color>
+    <color name="whitesmoke">#F5F5F5</color>
+    <color name="btn_focused_color_yellow">#fffdfdfd</color>
+    <color name="btn_pressed_color_light">#fffdfdfd</color>
+    <color name="btn_default_color_light">#ffff5f11</color>
+    <color name="transparent">#00000000</color>
+    <color name="title_separator">#e3e5e8</color>
+    <color name="grey_start">#ffcbcbcb</color>
+    <color name="grey_end">#ff8c9dae</color>
+    <color name="grey2">#ffeeeeed</color>
+    <color name="transparent_background">#bb000000</color>
+    <color name="transparent2">#66000000</color>
+    <color name="bright_foreground_light">#ff000000</color>
+    <color name="bright_foreground_light_inverse">#ffffffff</color>
+    <color name="bright_foreground_light_disabled">#80000000</color>
+    <color name="head_text">#0e5986</color>
+    <color name="dim_foreground_light">#808080</color>
+    <color name="dim_foreground_light_disabled">#80323232</color>
+    <color name="dim_foreground_light_inverse">#ff006eaa</color>
+    <color name="dim_foreground_light_inverse_disabled">#80bebebe</color>
+    <!-- add -->
+    <color name="index_tab_bg">#2b3139</color>
+    <color name="index_tab_active">#ffcc00</color>
+    <color name="gray_black">#2e2e2e</color>
+    <color name="gray_light">#887c7c7c</color>
+    <color name="main_gold">#ffcc00</color>
+    <color name="transparent_background2">#50000000</color>
+    <color name="lightgrey">#ff888888</color>
+    
+    <color name="chose">#0099cc</color>
+    <color name="unchose">#00394c</color>
+    <color name="unchose2">#7c3b67</color>
+    <color name="calendar_bg">#dddddd</color>
+    <color name="calendar_bg2">#FFFFFF</color>
+
+</resources>

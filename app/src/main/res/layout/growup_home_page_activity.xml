@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f0f0"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#00A5FB" >
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/single_match_title_back" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="成长值"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:id="@+id/share"
+            android:visibility="gone"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/share_icon" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" >
+
+        <ImageView
+            android:id="@+id/growupIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/grow_up_num_icon" />
+
+        <TextView
+            android:id="@+id/growupText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/growupIcon"
+            android:gravity="center_vertical"
+            android:text="成长值"
+            android:textColor="#3e3e3e"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/growupNum"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:textColor="#00a5fb"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <com.example.wireframe.view.XListView
+        android:id="@+id/xlistView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F1F0F0"
+        android:divider="#F1F0F0"
+        android:dividerHeight="1dp"
+        android:scrollbars="none" >
+    </com.example.wireframe.view.XListView>
+
+</LinearLayout>

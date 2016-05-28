@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 竖直方向虚线 -->
+    <declare-styleable name="DotLineVertical">
+
+        <!-- 线的颜色 -->
+        <attr name="fillColor" format="color" />
+        <!-- 点之间的间距 -->
+        <attr name="strokeWidth" format="dimension" />
+        <!-- 点的半径 -->
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+    <!-- 可控制图片大小的TextView -->
+    <declare-styleable name="TextIconView">
+        <attr name="left_height" format="dimension" />
+        <attr name="left_width" format="dimension" />
+        <attr name="right_height" format="dimension" />
+        <attr name="right_width" format="dimension" />
+        <attr name="top_height" format="dimension" />
+        <attr name="top_width" format="dimension" />
+        <attr name="bottom_height" format="dimension" />
+        <attr name="bottom_width" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="roundedimageview">
+        <attr name="border_thickness" format="dimension" />
+        <attr name="border_outside_color" format="color" />
+        <attr name="border_inside_color" format="color" />
+    </declare-styleable>
+
+    <!-- XListView的属性 -->
+    <declare-styleable name="XListView">
+        <!-- 下拉箭头 -->
+        <attr name="arrow" format="reference" />
+        <!-- 下拉刷新进度条,参看drawable下的style_pb -->
+        <attr name="pd_refresh" format="reference" />
+        <!-- 上拉加载进度条,参看drawable下的style_pb -->
+        <attr name="pd_loading" format="reference" />
+    </declare-styleable>
+
+</resources>

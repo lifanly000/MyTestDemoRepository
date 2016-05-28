@@ -1,0 +1,11 @@
+/.idea
+/.gradle
+/gradlew
+/gradlew.bat
+/local.properties
+/Wireframe.iml
+/gradle
+/build
+/app/app.iml
+/app/build
+/MyTestDemo.iml

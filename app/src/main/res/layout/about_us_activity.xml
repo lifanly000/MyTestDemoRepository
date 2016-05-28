@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#00A5FB" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="关于我们"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/single_match_title_back" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/emama_icon" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="        全球唯一国际化连锁少儿英语品牌-易贝乐。\n        20 年耕耘，40 多个国家，17000 多所学校，遍布全球五大洲。\n        理念先进、体系完善、师资强大、规模突起，完成从启蒙英语教育到少儿英语教育专家的升华。\n        北京易贝乐科技文化股份有限公司是一家集开设少儿英语学习中心、提供教学产品服务及开展移动互联线上业务的集团公司。\n        易贝乐国际少儿英语隶属于北京易贝乐科技文化股份有限公司，其少儿英语项目E-Blocks是全球EFL( English as a Foreign Language)少儿英语启蒙通用的教学方案。多年来，E-Blocks声誉满载，屡获各种国际大奖。\n        截止到2015年10月，易贝乐国际少儿英语已遍布中国，拥有70余家教学中心，数万名学员。\n\n北京易贝乐科技文化股份有限公司\n易贝乐（中国）总部\n咨询热线：400-6161-523\n电话：010-85808945\n传真：010-85808841\nE-mail：yibeile@eblockschina.com\n邮编：100022\n地址：北京市朝阳区三间房东路一号北京懋隆文化产业创意园内第二十栋西区A座" />
+    </ScrollView>
+
+</LinearLayout>

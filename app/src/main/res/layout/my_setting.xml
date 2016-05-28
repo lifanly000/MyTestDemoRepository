@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1F0F0"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#00A5FB" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="设置"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <RelativeLayout
+            android:id="@+id/back"
+            android:layout_width="48dp"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/single_match_title_back" />
+        </RelativeLayout>
+    </RelativeLayout>
+	<View 
+        android:layout_width="match_parent"
+    	android:layout_height="0.5dp"
+        android:background="#d4d4d4"
+        android:layout_marginTop="20dp"
+        />
+	<RelativeLayout 
+        android:id="@+id/item1"
+        android:layout_width="match_parent"
+    	android:layout_height="60dp"
+    	android:background="#FFFFFF"
+         >
+   		<TextView
+            android:layout_width="wrap_content"
+   			android:layout_height="wrap_content"
+   			android:layout_marginLeft="20dp"
+   			android:text="更换头像"
+   			android:textSize="14sp"
+            android:textColor="#484848"
+            android:layout_centerVertical="true"
+   			/> 
+   		<ImageView 
+   		    android:id="@+id/arrow1"
+	   		android:layout_width="8dp"
+	   		android:layout_height="18dp"
+   			android:layout_alignParentRight="true" 
+   			android:layout_marginRight="20dp"
+   			android:background="@drawable/arrowplay"
+   			android:layout_centerVertical="true"
+  			/>
+   		<ImageView 
+   		    android:id="@+id/myIcon"
+   		    android:layout_toLeftOf="@id/arrow1"
+            android:layout_width="40dp"
+   			android:layout_height="40dp"
+   		    android:layout_marginRight="15dp"
+   		    android:scaleType="fitXY"
+   		    android:layout_centerVertical="true"
+   		    android:background="@drawable/usercenter_default_icon"
+   		    />
+     </RelativeLayout>
+	<View 
+        android:layout_width="match_parent"
+    	android:layout_height="0.5dp"
+        android:background="#d4d4d4"
+        />
+	<View 
+        android:layout_width="match_parent"
+    	android:layout_height="0.5dp"
+        android:background="#d4d4d4"
+        android:layout_marginTop="10dp"
+        />
+	<RelativeLayout 
+        android:id="@+id/item2"
+        android:layout_width="match_parent"
+    	android:layout_height="44dp"
+    	android:background="#FFFFFF"
+         >
+   		<TextView
+            android:layout_width="wrap_content"
+   			android:layout_height="wrap_content"
+   			android:layout_marginLeft="20dp"
+   			android:text="修改密码"
+   			android:textSize="14sp"
+            android:textColor="#484848"
+            android:layout_centerVertical="true"
+   			/> 
+   		<ImageView 
+   		    android:id="@+id/arrow2"
+	   		android:layout_width="8dp"
+	   		android:layout_height="18dp"
+   			android:layout_alignParentRight="true" 
+   			android:layout_marginRight="20dp"
+   			android:background="@drawable/arrowplay"
+   			android:layout_centerVertical="true"
+  			/>
+     </RelativeLayout>
+	<View 
+        android:layout_width="match_parent"
+    	android:layout_height="0.5dp"
+        android:background="#d4d4d4"
+        />
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    >
+		<Button
+	        android:id="@+id/exit"
+	        android:layout_width="match_parent"
+	        android:layout_height="40dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
+	        android:layout_alignParentBottom="true"
+	        android:layout_marginBottom="60dp"
+	        android:background="#FB4700"
+	        android:text="安全退出"
+	        android:textColor="#FFFFFF" />
+	</RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+   >
+	<RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#00A5FB" >
+
+        <ImageView
+            android:id="@+id/titleIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/user_center_user_icon" />
+
+        <TextView
+            android:id="@+id/dayTitle"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF" />
+        <TextView
+            android:id="@+id/growupNum"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF" />
+    </RelativeLayout>
+   <RelativeLayout 
+        android:id="@+id/rl_banner"
+        android:layout_below="@id/rl_title"
+         android:layout_width="fill_parent"
+         android:layout_height="240dp"
+         android:background="@drawable/image_default"
+        >
+        <com.ab.view.sliding.AbSlidingPlayView
+            android:id="@+id/mAbSlidingPlayView"
+            android:layout_width="fill_parent"
+            android:layout_height="240dp"
+            android:visibility="invisible" >
+        </com.ab.view.sliding.AbSlidingPlayView>
+	</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:background="#33000000"
+        android:layout_alignBottom="@id/rl_banner"
+        android:padding="5dp">
+
+        <LinearLayout
+            android:id="@+id/ll_container"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:orientation="horizontal" >
+        </LinearLayout>
+            
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_toRightOf="@id/ll_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:singleLine="true"
+            android:layout_marginLeft="60dp"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+             
+    </RelativeLayout>
+    
+    <ListView 
+        android:id="@+id/listView"
+        android:dividerHeight="10dp"
+        android:divider="#F1F0F0"
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_banner"
+        >
+        
+    </ListView>
+
+</RelativeLayout>

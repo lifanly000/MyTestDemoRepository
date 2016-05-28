@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">eMama</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- 下拉刷新，上拉加载更多 布局 -->
+    <string name="xlistview_header_hint_normal">下拉刷新</string>
+    <string name="xlistview_header_hint_ready">松开刷新数据</string>
+    <string name="xlistview_header_hint_loading">正在加载...</string>
+    <string name="xlistview_header_last_time">上次更新时间：</string>
+    <string name="xlistview_footer_hint_normal">查看更多</string>
+    <string name="xlistview_footer_hint_ready">松开载入更多</string>
+
+    <!-- 登录注册找回密码 Activity 中 -->
+    <string name="error_pwd_lengthMin">密码长度不能少于6个字符</string>
+    <string name="error_pwd_lengthMax">密码长度不能超过20个字符</string>
+    <string name="error_name_lengthMin">用户名长度不能少于3个字符</string>
+    <string name="error_name_lengthMax">用户名长度不能超过12个字符</string>
+
+    <!-- 客服电话对话框 中 -->
+    <string name="dialogTelePhone001">确认拨打客服吗？</string>
+    <string name="dialogTelePhone002">确认</string>
+    <string name="dialogTelePhone003">取消</string>
+    <string name="title_activity_grow_up_first">GrowUpFirstActivity</string>
+
+</resources>

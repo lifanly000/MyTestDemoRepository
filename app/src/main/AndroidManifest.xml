@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.eblock.emama" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- 分享 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!-- 友盟 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- 友盟【可选】如果需要设置前台是否显示通知，需要设置这个权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- 友盟【可选】 -->
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_ADDED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_CHANGED" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_INSTALL" />
+    <uses-permission android:name="android.permission.BROADCAST_PACKAGE_REPLACED" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 录音权限 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <application
+        android:name=".Application"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.wireframe.ui.FirstEnterInActivity"
+            android:alwaysRetainTaskState="true"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.UiTabHost"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.journal.JournalHomePageActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.journal.JournalDetailActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.exiuxiu.ExiuxiuHomePageActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.exiuxiu.EXiuXiuItemActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.exiuxiu.ExiuxiuDetailSingleActivity"
+            android:configChanges="orientation|keyboardHidden|navigation" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.growup.GrowUpHomePageActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.growup.GrowUpDetailSingleActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.growup.GrowUpDetailActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.growup.GrowUpNumGetHomePageActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.growup.GrowUpDetailFullScreenActivity"
+            android:configChanges="orientation|keyboardHidden|navigation" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.RegisterActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.mycourse.MyCourseUpDetailActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.UserCenterActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.MyAdviceActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.mycourse.MyCourseActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.MySetting"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.MyResetPasswordActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.MyLocationSelectActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.MyContinueCostActivity"
+            android:exported="true"  
+           android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="wxe44ca3f84ceb1fb5"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.buy.MyUpCourseActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.buy.MyBuyUpCourseActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.buy.MyBuyDownCourseActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.mycourse.MyDownCourseActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.MyContinueCourseDetailActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.buy.MyUpCourseHomeActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.buy.MyBuyCourseActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.VideoPlayActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.VideoGrowUpDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.VideoJournalDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.VideoMyCourseUpDetailActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.RankListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.FindPasswordActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.mycenter.AboutUsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="com.example.wireframe.ui.WebActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+         <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+
+        <!-- 友盟社会化分享 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="566e2eabe0f55a2efe0026de" />
+
+        <!-- 腾讯SSO授权的Activity注册 -->
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- 这里需要配置自己QQ互联的AppID:tencentXXXXXX，和代码中保持一致 -->
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- *************************    分享相关的注册 START **************************** -->
+        <!-- 分享内容编辑页 -->
+        <activity
+            android:name="com.umeng.socialize.view.ShareActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:theme="@style/Theme.UMDialog"
+            android:windowSoftInputMode="stateVisible|adjustResize" >
+        </activity>
+
+        <!-- 微信回调activity -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!-- *************************    分享相关的注册 END **************************** -->
+        <activity
+            android:name="com.example.wireframe.ui.growup.GrowUpFirstActivity"
+            android:label="@string/title_activity_grow_up_first" >
+        </activity>
+    </application>
+
+</manifest>
