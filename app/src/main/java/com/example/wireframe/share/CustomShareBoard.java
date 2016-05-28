@@ -28,7 +28,7 @@ import com.umeng.socialize.controller.listener.SocializeListeners.SnsPostListene
  */
 public class CustomShareBoard extends PopupWindow implements OnClickListener {
 
-    private UMSocialService mController ;
+//    private UMSocialService mController ;
     private Activity mActivity;
     
     
