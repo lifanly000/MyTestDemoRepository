@@ -1,5 +1,6 @@
 package com.example.wireframe.ui;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,6 +12,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -103,7 +106,21 @@ public class UiTabHost extends TabHostActivity implements OnClickListener,
 
 		mLayoutInflater = getLayoutInflater();
 		getTabHost().setOnTabChangedListener(this);
+		requestLocalPermission();
+	}
 
+	/**
+	 * android 6.0 申请权限
+	 */
+	private void requestLocalPermission() {
+		if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+				!= PackageManager.PERMISSION_GRANTED
+				|| ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+				!= PackageManager.PERMISSION_GRANTED) {
+			//申请WRITE_EXTERNAL_STORAGE权限
+			ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE},
+					0);
+		}
 	}
 
 	private PackageManager pm ; 

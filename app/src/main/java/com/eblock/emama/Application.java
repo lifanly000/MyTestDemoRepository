@@ -1,17 +1,16 @@
 package com.eblock.emama;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.net.Uri;
 
 import com.example.wireframe.protocal.RequestManager;
-import com.example.wireframe.utils.CrashHandler;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
+
+import java.util.LinkedList;
+import java.util.List;
 
 
 public class Application extends android.app.Application 
