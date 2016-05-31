@@ -16,7 +16,6 @@ import com.example.wireframe.protocal.protocalProcess.model.ReportInfo;
 import com.example.wireframe.ui.BaseActivity;
 import com.example.wireframe.ui.VideoGrowUpDetailActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class GrowUpHomeAdapter extends BaseAdapter {
 
@@ -67,7 +66,11 @@ public class GrowUpHomeAdapter extends BaseAdapter {
 		ViewHolder holder = null;
 		if(convertView ==null)
 		{
-			convertView = View.inflate(context, R.layout.growup_home_item, null);
+			if("1".equals(reportType)) {
+				convertView = View.inflate(context, R.layout.growup_home_item_report, null);
+			}else{
+				convertView = View.inflate(context, R.layout.growup_home_item, null);
+			}
 			holder = new ViewHolder();  
 			holder.wholeView = (LinearLayout) convertView.findViewById(R.id.wholeView);
 			holder.image = (ImageView) convertView.findViewById(R.id.image);

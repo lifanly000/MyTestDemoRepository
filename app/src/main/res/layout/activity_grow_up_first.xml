@@ -57,7 +57,7 @@
          	android:layout_height="wrap_content"
             android:textColor="#FFFFFF"
             android:layout_centerVertical="true"
-            android:text="eBaby activities"
+            android:text="eBaby Activities"
             android:textSize="16sp"
             />
         <ImageView 
