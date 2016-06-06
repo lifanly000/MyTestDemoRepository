@@ -1,7 +1,5 @@
 package com.example.wireframe.ui.exiuxiu;
 
-import java.util.ArrayList;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -9,12 +7,12 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ImageView.ScaleType;
 
 import com.ab.view.listener.AbOnItemClickListener;
 import com.ab.view.listener.AbOnScrollListener;
@@ -34,7 +32,8 @@ import com.example.wireframe.ui.VideoPlayActivity;
 import com.example.wireframe.ui.growup.GrowUpNumGetHomePageActivity;
 import com.example.wireframe.ui.mycenter.LoginActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
+
+import java.util.ArrayList;
 
 public class ExiuxiuHomePageActivity extends BaseActivity implements
 		ProtocalEngineObserver, OnClickListener {
@@ -54,9 +53,9 @@ public class ExiuxiuHomePageActivity extends BaseActivity implements
 	// 异步加载图片的显示参数
 	private DisplayImageOptions options = new DisplayImageOptions.Builder()
 			.cacheInMemory(true).cacheOnDisk(true)
-			.showImageOnLoading(R.drawable.image_default)
-			.showImageForEmptyUri(R.drawable.image_default)
-			.showImageOnFail(R.drawable.image_default).build();
+			.showImageOnLoading(R.drawable.image_default_banner)
+			.showImageForEmptyUri(R.drawable.image_default_banner)
+			.showImageOnFail(R.drawable.image_default_banner).build();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

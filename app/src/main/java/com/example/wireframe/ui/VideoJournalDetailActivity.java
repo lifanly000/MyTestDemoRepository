@@ -1,8 +1,10 @@
 package com.example.wireframe.ui;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -16,6 +18,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -130,6 +134,26 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
 
     private ListViewInScroll cndy_listView;
 
+    /**
+     * android 6.0 申请权限
+     */
+    private void requestLocalPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED
+                || ContextCompat.checkSelfPermission(this, Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS)
+                != PackageManager.PERMISSION_GRANTED) {
+            //申请WRITE_EXTERNAL_STORAGE权限
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                            Manifest.permission.READ_PHONE_STATE,
+                            Manifest.permission.RECORD_AUDIO,
+                            Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
+                            Manifest.permission.CAMERA},
+                    0);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,6 +163,7 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED);
         setContentView(R.layout.jorunal_item_activity);
 //		setHorizonEnable(0);
+        requestLocalPermission();
 
         findViewById(R.id.back).setOnClickListener(this);
         findViewById(R.id.share).setOnClickListener(this);
@@ -553,7 +578,7 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
                 sendHomeWork();
                 break;
             case R.id.share:
-                ShareUtil.shareByYoumeng(this, "eMama,易贝乐家校互动平台，帮您分分钟了解孩子学习情况。", title.getText().toString(), "");
+                ShareUtil.shareByYoumeng(this, "eMama,易贝乐家校互动平台，帮您分分钟了解孩子学习情况。", titleStr, pageUrl);
                 break;
             default:
                 break;
@@ -668,6 +693,9 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
     private boolean isFirst = true;
     private JournalCNDYAdapter cndy_adapter;
 
+    private String titleStr = "";
+    private String pageUrl = "";
+
     @Override
     public void OnProtocalFinished(Object obj) {
         endProgress();
@@ -676,6 +704,9 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
             if (data.commonData.result_code.equals("0")
                     || data.commonData.result_code.equals("0000")) {
                 ll_whole.setVisibility(View.VISIBLE);
+
+                titleStr = data.title;
+                pageUrl = data.page;
 
                 title.setText(data.date + " " + data.title);
                 userName.setText(data.publisherName);
