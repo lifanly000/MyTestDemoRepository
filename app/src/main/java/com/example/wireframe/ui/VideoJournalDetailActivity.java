@@ -258,22 +258,23 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
                 myHomeWork.setVisibility(View.VISIBLE);
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
+                        voiceRecordTime = 0;
                         changeBtnBackground(true);
                         recordingVoice();
                         break;
                     case MotionEvent.ACTION_UP:
                         changeBtnBackground(false);
                         if (soundFile != null && soundFile.exists()) {
-//						try {
+						try {
                             mediaRecorder.setOnErrorListener(null);
                             mediaRecorder.setOnInfoListener(null);
                             mediaRecorder.setPreviewDisplay(null);
                             mediaRecorder.stop(); // **停止录音**
                             mediaRecorder.release(); // **释放资源**
                             mediaRecorder = null;
-//						} catch (IllegalStateException e) {
-//							e.printStackTrace();
-//						}
+						} catch (IllegalStateException e) {
+							e.printStackTrace();
+						}
                         }
                         break;
                     default:
@@ -329,7 +330,7 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
             voiceIcon.setBackgroundResource(R.drawable.learn_voice_2);
             voiceText.setTextColor(Color.WHITE);
             voiceTime.setBackgroundDrawable(null);
-            voiceTime.setVisibility(View.VISIBLE);
+            voiceTime.setVisibility(View.INVISIBLE);
             voiceTimeRight.setVisibility(View.INVISIBLE);
             homeWorkImage2.setBackgroundResource(R.drawable.learn_icon_blank);
             sendMyHomework.setVisibility(View.VISIBLE);

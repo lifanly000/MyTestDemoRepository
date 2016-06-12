@@ -28,9 +28,7 @@ import com.example.wireframe.ui.BaseActivity;
 import com.example.wireframe.ui.growup.GrowUpNumGetHomePageActivity;
 import com.example.wireframe.ui.mycenter.buy.MyBuyCourseActivity;
 import com.example.wireframe.ui.mycenter.mycourse.MyCourseActivity;
-import com.example.wireframe.view.TabHostActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class UserCenterActivity extends BaseActivity implements OnClickListener, ProtocalEngineObserver {
 	
@@ -85,8 +83,7 @@ public class UserCenterActivity extends BaseActivity implements OnClickListener,
 		}else{
 			version.setVisibility(View.INVISIBLE);
 		}
-		
-		startProgress();
+
 		doVersionUpdata();
 	}
 
@@ -320,6 +317,7 @@ public class UserCenterActivity extends BaseActivity implements OnClickListener,
 	protected void onResume() {
 		super.onResume();
 		startRequestUserBalanceandRed();
+		startProgress();
 		startRequest();
 	}
 	

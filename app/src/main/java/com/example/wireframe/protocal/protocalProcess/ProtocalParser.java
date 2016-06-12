@@ -1,8 +1,5 @@
 package com.example.wireframe.protocal.protocalProcess;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -50,6 +47,9 @@ import com.example.wireframe.protocal.protocalProcess.model.UserLoginResponseDat
 import com.example.wireframe.protocal.protocalProcess.model.UserRegisterResponseData;
 import com.example.wireframe.protocal.protocalProcess.model.Works;
 import com.example.wireframe.protocal.protocalProcess.model.ZanAndCommentResponseData;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 public class ProtocalParser {
 
@@ -699,6 +699,18 @@ public class ProtocalParser {
     	
     	ParseCommonData(context, jsonRoot, repdata.commonData);
     	if (!repdata.commonData.result_code.equals("0000") && 
+    			!repdata.commonData.result_code.equals("0")) {
+    		return repdata;
+    	}
+    	return repdata;
+    }
+
+	public static Object ParseShareResultData(Context context, String responseData) throws Exception {
+    	JSONObject jsonRoot = new JSONObject(responseData);
+    	ZanAndCommentResponseData repdata = new ZanAndCommentResponseData();
+
+    	ParseCommonData(context, jsonRoot, repdata.commonData);
+    	if (!repdata.commonData.result_code.equals("0000") &&
     			!repdata.commonData.result_code.equals("0")) {
     		return repdata;
     	}

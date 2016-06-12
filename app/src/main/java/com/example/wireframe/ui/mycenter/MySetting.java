@@ -102,8 +102,6 @@ public class MySetting extends BaseActivity implements OnClickListener {
     private void requestLocalPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
-                != PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS)
                 != PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
@@ -111,8 +109,8 @@ public class MySetting extends BaseActivity implements OnClickListener {
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             //申请WRITE_EXTERNAL_STORAGE权限
+            Toast.makeText(this,"申请权限",Toast.LENGTH_SHORT).show();
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            Manifest.permission.READ_PHONE_STATE,
                             Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
                             Manifest.permission.CAMERA,
                             Manifest.permission.READ_EXTERNAL_STORAGE

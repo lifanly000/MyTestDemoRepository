@@ -21,7 +21,8 @@ public class GrowUpGetNumHomeAdapter extends BaseAdapter {
 	private Context context ;
 	
 	private GrowUpNumberResponseData data ;
-	
+	private GrowUpNumberResponseData initialData ;
+
 	public GrowUpGetNumHomeAdapter(Context context) {
 		super();
 		this.context = context;
@@ -29,7 +30,20 @@ public class GrowUpGetNumHomeAdapter extends BaseAdapter {
 
 	
 	public void setData(GrowUpNumberResponseData data) {
-		this.data = data;
+		this.initialData = data;
+		fillData();
+	}
+
+	private void fillData(){
+		data = new GrowUpNumberResponseData();
+		if(initialData !=null && initialData.tasks !=null && initialData.tasks.size()>0){
+			data.amount = initialData.amount;
+			for(Task task :initialData.tasks){
+				if(!task.tag.equals("viewTrace") && !task.tag.equals("viewOnline")){
+					data.tasks.add(task);
+				}
+			}
+		}
 	}
 
 

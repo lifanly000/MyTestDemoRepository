@@ -1,7 +1,5 @@
 package com.example.wireframe.protocal.protocalProcess;
 
-import org.json.JSONObject;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -27,10 +25,13 @@ import com.example.wireframe.protocal.protocalProcess.model.MyCourseOnlineDetail
 import com.example.wireframe.protocal.protocalProcess.model.PayRequestData;
 import com.example.wireframe.protocal.protocalProcess.model.RankInfoRequestData;
 import com.example.wireframe.protocal.protocalProcess.model.ResetPasswordRequestData;
+import com.example.wireframe.protocal.protocalProcess.model.ShareResultRequestData;
 import com.example.wireframe.protocal.protocalProcess.model.UpdateRequestData;
 import com.example.wireframe.protocal.protocalProcess.model.UserLoginRequestData;
 import com.example.wireframe.protocal.protocalProcess.model.UserRegisterRequestData;
 import com.example.wireframe.protocal.protocalProcess.model.ZanAndCommentRequestData;
+
+import org.json.JSONObject;
 
 public class ProtocalConstrustor {
 	
@@ -392,6 +393,20 @@ public class ProtocalConstrustor {
     	JSONObject jsonCommandInfo = new JSONObject();
     	jsonCommandInfo.put("courseId", cmdInfo.courseId);
     	jsonCommandInfo.put("payType", cmdInfo.payType);
+    	jsonRoot.put("commandInfo", jsonCommandInfo);
+    	return jsonRoot.toString();
+    }
+	public static String ConstructShareResult(Object obj,Context context) throws Exception {
+    	JSONObject jsonRoot = new JSONObject();
+
+    	jsonRoot.put("busiCode", "150004");
+    	addCommonData(jsonRoot, context);
+
+    	ShareResultRequestData cmdInfo = (ShareResultRequestData) obj;
+
+    	JSONObject jsonCommandInfo = new JSONObject();
+    	jsonCommandInfo.put("title", cmdInfo.title);
+    	jsonCommandInfo.put("url", cmdInfo.url);
     	jsonRoot.put("commandInfo", jsonCommandInfo);
     	return jsonRoot.toString();
     }

@@ -185,5 +185,11 @@ public class SchemaDef
 	// 请求数据结构：RankInfoRequestData
 	// 响应数据结构：RankInfoResponseData
 	public static final int RANK_INFO        = 150003;
+
+	// 分享反馈
+	// 交互数据参见：
+	// 请求数据结构：ShareResultRequestData
+	// 响应数据结构：ShareResultResponseData
+	public static final int SHARE_RESULT        = 150004;
 	
 }

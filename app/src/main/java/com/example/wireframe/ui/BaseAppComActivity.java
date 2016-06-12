@@ -1,19 +1,16 @@
 package com.example.wireframe.ui;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.DisplayMetrics;
+import android.support.v7.app.AppCompatActivity;
 
 import com.eblock.emama.Application;
 import com.eblock.emama.R;
-import com.example.wireframe.view.TabHostActivity;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
@@ -23,12 +20,11 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.io.File;
 
-public class BaseActivity extends Activity {
+public class BaseAppComActivity extends AppCompatActivity {
 	
 	protected Application application;
 	protected SharedPreferences sp ;
 	protected Editor editor ;
-	protected int screen_width = 0; //屏幕宽度
 	private static boolean isFirst = true ;
 	
 	// ImageLoader-------------------------------------/////
@@ -128,30 +124,6 @@ public class BaseActivity extends Activity {
 		res.updateConfiguration(config, res.getDisplayMetrics());
 		return res;
 	}
-//	/**
-//	 * 禁止系统横竖屏
-//	 * @param index 0-禁止；1-不禁止
-//	 */
-//	public void setHorizonEnable(int index){
-//		ContentValues values = new ContentValues();
-//		ContentResolver resolver = this.getContentResolver();
-//		Uri uri = Uri.parse("content://settings/system");
-//		String name="accelerometer_rotation";
-//		int value = index;
-//
-//		values.put("name", name);
-//		values.put("value", Integer.toString(value));
-//		resolver.insert(uri, values);
-//	}
-
-	/**
-	 * 获取手机屏幕的相关信息
-	 */
-	public  int getScreenInfoWidth() {
-		DisplayMetrics metric = new DisplayMetrics();
-		getWindowManager().getDefaultDisplay().getMetrics(metric);
-		return metric.widthPixels;
-	}
 
 private ProgressDialog progressDialog = null;
     
@@ -167,28 +139,4 @@ private ProgressDialog progressDialog = null;
         if (progressDialog != null)
             progressDialog.dismiss();
     }
-    
-    @Override
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if(requestCode == 10005){
-			if(resultCode ==102){
-				TabHostActivity.mTabHost.setCurrentTab(1);
-			}else if(resultCode ==103){
-				TabHostActivity.mTabHost.setCurrentTab(2);
-			}
-		}
-	}
-    
-//    /**
-//	 * 分享应用程序
-//	 */
-//	protected void shareApplication() {
-//		// Intent { act=android.intent.action.SEND typ=text/plain flg=0x3000000 cmp=com.android.mms/.ui.ComposeMessageActivity (has extras) } from pid 256
-//		Intent intent =new Intent();
-//		intent.setAction("android.intent.action.SEND");
-//		intent.addCategory("android.intent.category.DEFAULT");
-//		intent.setType("text/plain");
-//		intent.putExtra(Intent.EXTRA_TEXT, "分享...");
-//		startActivity(intent);
-//	}
 }

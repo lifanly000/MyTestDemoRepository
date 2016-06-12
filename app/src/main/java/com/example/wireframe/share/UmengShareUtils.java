@@ -87,7 +87,7 @@ public class UmengShareUtils {
      * 对于新浪，豆瓣，人人，腾讯微博跳转到分享编辑页，其他平台直接跳转到对应的客户端
      */
     public void postShare(String title) {
-        CustomShareBoard shareBoard = new CustomShareBoard(mActivity,mController,title);
+        CustomShareBoard shareBoard = new CustomShareBoard(mActivity,mController,title,url);
         shareBoard.showAtLocation(mActivity.getWindow().getDecorView(), Gravity.BOTTOM, 0, 0);
     }
     

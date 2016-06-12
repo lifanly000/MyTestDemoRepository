@@ -16,27 +16,34 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.eblock.emama.R;
+import com.example.wireframe.protocal.ProtocalEngine;
+import com.example.wireframe.protocal.ProtocalEngineObserver;
+import com.example.wireframe.protocal.SchemaDef;
+import com.example.wireframe.protocal.protocalProcess.model.ShareResultRequestData;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.bean.SocializeEntity;
 import com.umeng.socialize.bean.StatusCode;
-import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
 import com.umeng.socialize.controller.listener.SocializeListeners.SnsPostListener;
 
 /**
  * 
  */
-public class CustomShareBoard extends PopupWindow implements OnClickListener {
+public class CustomShareBoard extends PopupWindow implements OnClickListener ,ProtocalEngineObserver{
 
     private UMSocialService mController ;
     private Activity mActivity;
-    
+    private String title ;
+    private String url ;
+
     
 
-    public CustomShareBoard(Activity activity,UMSocialService controller,String shareTitle) {
+    public CustomShareBoard(Activity activity,UMSocialService controller,String shareTitle,String url) {
         super(activity);
         this.mActivity = activity;
         this.mController = controller;
+        this.title = shareTitle;
+        this.url =url;
         initView(activity,shareTitle);
 //        android:layoutAnimation="@anim/layout_animation"
     }
@@ -106,9 +113,33 @@ public class CustomShareBoard extends PopupWindow implements OnClickListener {
                     showText += "平台分享失败";
                 }
                 Toast.makeText(mActivity, showText, Toast.LENGTH_SHORT).show();
+                startRequest();
                 dismiss();
             }
         });
     }
 
+    private void startRequest(){
+        ProtocalEngine engine = new ProtocalEngine(mActivity);
+        engine.setObserver(this);
+        ShareResultRequestData data = new ShareResultRequestData();
+        data.title = title ;
+        data.url = url;
+        engine.startRequest(SchemaDef.SHARE_RESULT,data);
+    }
+
+    @Override
+    public void OnProtocalFinished(Object obj) {
+
+    }
+
+    @Override
+    public void OnProtocalError(int errorCode) {
+
+    }
+
+    @Override
+    public void OnProtocalProcess(Object obj) {
+
+    }
 }

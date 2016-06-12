@@ -25,7 +25,7 @@ public class Application extends android.app.Application
     @Override
     public void onCreate() {
         super.onCreate();
-        setHorizonEnable(0);
+//        setHorizonEnable(0);
         RequestManager.init(this);
         final IWXAPI msgApi = WXAPIFactory.createWXAPI(this, null);
 	     // 将该app注册到微信

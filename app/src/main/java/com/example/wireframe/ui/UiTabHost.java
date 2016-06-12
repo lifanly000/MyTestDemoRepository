@@ -113,7 +113,8 @@ public class UiTabHost extends TabHostActivity implements OnClickListener,
 	 * android 6.0 申请权限
 	 */
 	private void requestLocalPermission() {
-		if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+		if (
+				ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
 				!= PackageManager.PERMISSION_GRANTED
 				|| ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
 				!= PackageManager.PERMISSION_GRANTED
@@ -123,14 +124,19 @@ public class UiTabHost extends TabHostActivity implements OnClickListener,
 				!= PackageManager.PERMISSION_GRANTED
 				|| ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
 				!= PackageManager.PERMISSION_GRANTED
+				|| ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_SETTINGS)
+				!= PackageManager.PERMISSION_GRANTED
 				|| ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-				!= PackageManager.PERMISSION_GRANTED) {
+				!= PackageManager.PERMISSION_GRANTED
+				) {
 			//申请WRITE_EXTERNAL_STORAGE权限
-			ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
+			ActivityCompat.requestPermissions(this, new String[]{
+					Manifest.permission.WRITE_EXTERNAL_STORAGE,
 					Manifest.permission.READ_PHONE_STATE,
 					Manifest.permission.RECORD_AUDIO,
 					Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
 					Manifest.permission.CAMERA,
+					Manifest.permission.WRITE_SETTINGS,
 					Manifest.permission.READ_EXTERNAL_STORAGE
 			},
 					0);

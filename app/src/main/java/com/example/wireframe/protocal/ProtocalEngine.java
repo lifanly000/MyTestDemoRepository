@@ -162,6 +162,9 @@ public class ProtocalEngine {
 		case SchemaDef.PAY_INFO:
 			requestPayInfoData(requestObj);
 			break;
+		case SchemaDef.SHARE_RESULT:
+			requestShareReult(requestObj);
+			break;
 		default:
 			break;
 		}
@@ -678,6 +681,34 @@ public class ProtocalEngine {
 			return null;
 		}
 	}
+	void requestShareReult(Object requestObj)
+	{
+		Logger.log("ProtocalEngine", "requestMainPageData - in");
+
+		requestUrl = UrlDefine.getZhangyuUrl();
+
+		String data = ConstructShareResultRequestData(requestObj);
+		if(data != null)
+		{
+			sendDataStr = data;
+			startHttpRequestPost(sendDataStr);
+		}
+		else
+		{
+			if(observer != null)
+				observer.OnProtocalError(ProtocalEngineObserver.ERROR_REQUEST);
+		}
+
+		Logger.log("ProtocalEngine", "requestMainPageData - out");
+	}
+	String ConstructShareResultRequestData(Object requestObj)
+	{
+		try{
+			return ProtocalConstrustor.ConstructShareResult(requestObj,context);
+		}catch(Exception e){
+			return null;
+		}
+	}
 	void requestMyBuyCourseOfflineData(Object requestObj)
 	{
 		Logger.log("ProtocalEngine", "requestMainPageData - in");
@@ -1185,6 +1216,9 @@ public class ProtocalEngine {
 				break;
 			case SchemaDef.PAY_INFO:
 				observer.OnProtocalFinished(ProtocalParser.ParseJouanalPayInfoData(context,responseData));
+				break;
+			case SchemaDef.SHARE_RESULT:
+				observer.OnProtocalFinished(ProtocalParser.ParseShareResultData(context,responseData));
 				break;
 			default:
 				break;
