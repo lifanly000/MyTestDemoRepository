@@ -102,16 +102,16 @@ public class MySetting extends BaseActivity implements OnClickListener {
     private void requestLocalPermission() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this, Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS)
-                != PackageManager.PERMISSION_GRANTED
+//                || ContextCompat.checkSelfPermission(this, Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS)
+//                != PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED
                 || ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             //申请WRITE_EXTERNAL_STORAGE权限
-            Toast.makeText(this,"申请权限",Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this,"申请权限",Toast.LENGTH_SHORT).show();
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                            Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
+//                            Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS,
                             Manifest.permission.CAMERA,
                             Manifest.permission.READ_EXTERNAL_STORAGE
                     },
@@ -212,21 +212,44 @@ public class MySetting extends BaseActivity implements OnClickListener {
         startActivityForResult(intent, RESULT_REQUEST_CODE);
     }
 
+    private Bitmap getBitmapFromUri(Uri uri)
+    {
+        try
+        {
+            // 读取uri所在的图片
+            Bitmap bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
+            return bitmap;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     /**
      * 保存裁剪之后的图片数据
      */
     private void getImageToView(Intent data) {
-        Bundle extras = data.getExtras();
-        if (extras != null) {
-            Bitmap photo = extras.getParcelable("data");
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            Uri uri = data.getData();
+            Bitmap photo = getBitmapFromUri(uri);
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            photo.compress(Bitmap.CompressFormat.PNG, 100, baos);
+            uploadpic(saveMyBitmap(photo), photo);
+        }else {
+            Bundle extras = data.getExtras();
+            if (extras != null) {
+                Bitmap photo = extras.getParcelable("data");
 //			BitmapDrawable bd= new BitmapDrawable(photo);
 //			myIcon.setBackgroundDrawable(bd);
 
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            photo.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                photo.compress(Bitmap.CompressFormat.PNG, 100, baos);
 //			String pic = new String(Base64.encode(baos.toByteArray(),
 //					Base64.DEFAULT));
-            uploadpic(saveMyBitmap(photo), photo);
+                uploadpic(saveMyBitmap(photo), photo);
+            }
         }
     }
 
