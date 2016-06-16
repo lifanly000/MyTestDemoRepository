@@ -107,6 +107,7 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
     private TextView voiceTimeRight;
     private TextView voiceTime1;
     private TextView voiceTimeRight1;
+    private TextView titleHead;
 
 
     private String homeworkurl = "";
@@ -168,6 +169,7 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
         findViewById(R.id.back).setOnClickListener(this);
         findViewById(R.id.share).setOnClickListener(this);
         title = (TextView) findViewById(R.id.title);
+        titleHead = (TextView) findViewById(R.id.titleHead);
         userName = (TextView) findViewById(R.id.userName);
         userType = (TextView) findViewById(R.id.userType);
         time = (TextView) findViewById(R.id.time);
@@ -193,6 +195,7 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
         homeWorkImage1.setOnClickListener(this);
         homeWorkImage2.setOnClickListener(this);
         sendMyHomework.setOnClickListener(this);
+
 
         workId = getIntent().getStringExtra("workId");
 
@@ -705,7 +708,7 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
             if (data.commonData.result_code.equals("0")
                     || data.commonData.result_code.equals("0000")) {
                 ll_whole.setVisibility(View.VISIBLE);
-
+                titleHead.setText(data.title);
                 titleStr = data.title;
                 pageUrl = data.page;
 

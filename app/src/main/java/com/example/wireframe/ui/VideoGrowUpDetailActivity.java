@@ -34,7 +34,6 @@ import com.example.wireframe.protocal.ProtocalEngineObserver;
 import com.example.wireframe.protocal.SchemaDef;
 import com.example.wireframe.protocal.protocalProcess.model.GrowUpHomeDetailRequestData;
 import com.example.wireframe.protocal.protocalProcess.model.GrowUpHomeDetailResponseData;
-import com.example.wireframe.protocal.protocalProcess.model.GrowUpResultDetailRequestData;
 import com.example.wireframe.protocal.protocalProcess.model.GrowUpResultDetailResponseData;
 import com.example.wireframe.ui.mycenter.LoginActivity;
 import com.example.wireframe.utils.ShareUtil;
@@ -60,6 +59,7 @@ public class VideoGrowUpDetailActivity extends BaseActivity implements ProtocalE
     private GestureDetector gestureScanner;
     
 	private TextView title;
+	private TextView titleHead;
 	private TextView userName, userType, time;
 	private ImageView userIcon;
 
@@ -91,6 +91,7 @@ public class VideoGrowUpDetailActivity extends BaseActivity implements ProtocalE
 		
 		findViewById(R.id.back).setOnClickListener(this);
 		title = (TextView) findViewById(R.id.title);
+		titleHead = (TextView) findViewById(R.id.titleHead);
 		userName = (TextView) findViewById(R.id.userName);
 		userType = (TextView) findViewById(R.id.userType);
 		time = (TextView) findViewById(R.id.time);
@@ -175,6 +176,7 @@ public class VideoGrowUpDetailActivity extends BaseActivity implements ProtocalE
 				ll_whole.setVisibility(View.VISIBLE);
 
 				title.setText(data.title);
+				titleHead.setText(data.title);
 				userName.setText(data.publisherName);
 				userType.setText(data.publisherType);
 				time.setText(data.publishTime);
@@ -212,6 +214,7 @@ public class VideoGrowUpDetailActivity extends BaseActivity implements ProtocalE
 				ll_whole.setVisibility(View.VISIBLE);
 				
 				title.setText(data.title);
+				titleHead.setText(data.title);
 				userName.setText(data.publisherName);
 				userType.setText(data.publisherType);
 				time.setText(data.publishTime);
