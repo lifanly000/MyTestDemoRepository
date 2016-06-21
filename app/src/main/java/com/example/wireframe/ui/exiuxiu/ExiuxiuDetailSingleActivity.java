@@ -1,8 +1,5 @@
 package com.example.wireframe.ui.exiuxiu;
 
-import java.util.ArrayList;
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -19,12 +16,12 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.view.inputmethod.InputMethodManager;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -50,11 +47,11 @@ import com.example.wireframe.protocal.protocalProcess.model.EXiuxiuHomePageDetai
 import com.example.wireframe.protocal.protocalProcess.model.ZanAndCommentRequestData;
 import com.example.wireframe.protocal.protocalProcess.model.ZanAndCommentResponseData;
 import com.example.wireframe.ui.BaseActivity;
-import com.example.wireframe.ui.exiuxiu.ExiuxiuDetailSingleActivity;
 import com.example.wireframe.utils.ShareUtil;
 import com.example.wireframe.view.ListViewInScroll;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
+
+import java.util.ArrayList;
 
 /**
  * 
@@ -108,7 +105,8 @@ public class ExiuxiuDetailSingleActivity extends BaseActivity implements Protoca
 	private ImageView commentIcon;
 	private TextView zanText;
 	private TextView commentText;
-	
+	private TextView titleHead;
+
 	private ListViewInScroll lv_comment;
 	private View in_bottom;
 	private Button btn_send;
@@ -210,7 +208,7 @@ public class ExiuxiuDetailSingleActivity extends BaseActivity implements Protoca
 			break;
 		case R.id.zanLL:
 			if(hasZan){
-				Toast.makeText(this, "您已经点过赞了~", 0).show();
+				Toast.makeText(this, "您已经点过赞了~", Toast.LENGTH_SHORT).show();
 				return ;
 			}
 			hasZan = true;
@@ -225,7 +223,7 @@ public class ExiuxiuDetailSingleActivity extends BaseActivity implements Protoca
 			}
 			String contentStr = et_msg.getText().toString();
 			if(TextUtils.isEmpty(contentStr)){
-				Toast.makeText(this, "评论不能为空~", 0).show();
+				Toast.makeText(this, "评论不能为空~", Toast.LENGTH_SHORT).show();
 				return ;
 			}
 			startZanAndCommentRequest("2",toSomeBody,contentStr);
@@ -303,7 +301,8 @@ videoview = (FrameLayout) findViewById(R.id.video_view);
 		commentIcon = (ImageView) findViewById(R.id.commentIcon);
 		zanText = (TextView) findViewById(R.id.zanText);
 		commentText = (TextView) findViewById(R.id.commentText);
-		
+		titleHead = (TextView) findViewById(R.id.titleHead);
+
 		lv_comment = (ListViewInScroll) findViewById(R.id.lv_comment);
 		in_bottom = findViewById(R.id.in_bottom);
 		btn_send = (Button) findViewById(R.id.btn_send);
@@ -325,6 +324,7 @@ videoview = (FrameLayout) findViewById(R.id.video_view);
 		
 		startProgress();
 		startRequest();
+		titleHead.setText("E-秀秀");
 		
 		
 		adapter = new MyCommentAdapter();
@@ -638,6 +638,7 @@ videoview = (FrameLayout) findViewById(R.id.video_view);
 				ll_whole.setVisibility(View.VISIBLE);
 				
 				title.setText(data.title);
+//				titleHead.setText(data.title);
 				userName.setText(data.publisherName);
 				userType.setText(data.publisherType);
 				time.setText(data.publishTime);

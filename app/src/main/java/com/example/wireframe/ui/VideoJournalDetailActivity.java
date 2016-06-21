@@ -98,6 +98,7 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
     private TextView todayHomeWork, homeworkcontent, myHomeWork;
     private RelativeLayout homeWorkImage1;
     private RelativeLayout homeWorkImage2;
+    private RelativeLayout vocieRL;
     private Button doHomeWorkBtn;// 长按录音图标
     private TextView sendMyHomework;
     private ImageView voiceIcon;
@@ -182,6 +183,7 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
         myHomeWork = (TextView) findViewById(R.id.myHomeWork);
         homeWorkImage1 = (RelativeLayout) findViewById(R.id.homeWorkImage1);
         homeWorkImage2 = (RelativeLayout) findViewById(R.id.homeWorkImage2);
+        vocieRL = (RelativeLayout) findViewById(R.id.vocieRL);
         doHomeWorkBtn = (Button) findViewById(R.id.doHomeWorkBtn);
         sendMyHomework = (TextView) findViewById(R.id.sendMyHomework);
         voiceIcon = (ImageView) findViewById(R.id.voiceIcon);
@@ -261,11 +263,17 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
                 myHomeWork.setVisibility(View.VISIBLE);
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
+//                        Log.d("aaaaaaa", "1");
                         voiceRecordTime = 0;
                         changeBtnBackground(true);
                         recordingVoice();
                         break;
+                    case MotionEvent.ACTION_MOVE:
+//                        Toast.makeText(VideoJournalDetailActivity.this,"aaa",Toast.LENGTH_SHORT).show();
+//                        Log.d("aaaaaaa", "2");
+                        break;
                     case MotionEvent.ACTION_UP:
+//                        Log.d("aaaaaaa", "3");
                         changeBtnBackground(false);
                         if (soundFile != null && soundFile.exists()) {
 						try {
@@ -280,10 +288,26 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
 						}
                         }
                         break;
+                    case MotionEvent.ACTION_CANCEL:
+//                        Log.d("aaaaaaa", "4");
+                        changeBtnBackground(false);
+                        if (soundFile != null && soundFile.exists()) {
+                            try {
+                                mediaRecorder.setOnErrorListener(null);
+                                mediaRecorder.setOnInfoListener(null);
+                                mediaRecorder.setPreviewDisplay(null);
+                                mediaRecorder.stop(); // **停止录音**
+                                mediaRecorder.release(); // **释放资源**
+                                mediaRecorder = null;
+                            } catch (IllegalStateException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        break;
                     default:
                         break;
                 }
-                return false;
+                return true;
             }
         });
     }
@@ -323,6 +347,7 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
     private boolean hasSended = false;
 
     private void changeBtnBackground(boolean b) {
+        doHomeWorkBtn.setSelected(b);
         if (b) {
 //			doHomeWorkBtn
 //					.setBackgroundResource(R.drawable.v4_gradient_box_whole_blue);

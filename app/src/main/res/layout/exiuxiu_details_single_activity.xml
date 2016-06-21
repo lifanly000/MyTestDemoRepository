@@ -31,10 +31,11 @@
         </RelativeLayout>
 
         <TextView
+            android:id="@+id/titleHead"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="报告内容"
+            android:text="E-秀秀"
             android:textColor="#FFFFFF"
             android:textSize="16sp" />
 

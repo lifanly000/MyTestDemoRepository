@@ -20,6 +20,15 @@
             android:background="@drawable/user_center_user_icon" />
 
         <TextView
+            android:id="@+id/dayTitle"
+            android:text="成长"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:textColor="#FFFFFF" />
+
+        <TextView
             android:id="@+id/growupNum"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

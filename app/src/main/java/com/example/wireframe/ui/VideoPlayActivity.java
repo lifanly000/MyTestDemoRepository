@@ -57,6 +57,8 @@ import com.example.wireframe.view.ListViewInScroll;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
+import static com.eblock.emama.R.id.titleHead;
+
 /**
  * 
  * @author tanwenwei
@@ -88,7 +90,7 @@ public class VideoPlayActivity extends BaseActivity implements ProtocalEngineObs
     
     
     
-    private TextView title,userName ,userType,time ;
+    private TextView title,userName ,userType,time,titleHead ;
 	private ImageView userIcon;
 	
 	
@@ -292,6 +294,7 @@ public class VideoPlayActivity extends BaseActivity implements ProtocalEngineObs
 		
 		findViewById(R.id.back).setOnClickListener(this);
 		title = (TextView) findViewById(R.id.title);
+		titleHead = (TextView) findViewById(R.id.titleHead);
 		userName = (TextView) findViewById(R.id.userName);
 		userType = (TextView) findViewById(R.id.userType);
 		time = (TextView) findViewById(R.id.time);
@@ -651,6 +654,7 @@ public class VideoPlayActivity extends BaseActivity implements ProtocalEngineObs
 				ll_whole.setVisibility(View.VISIBLE);
 				
 				title.setText(data.title);
+//				titleHead.setText(data.title);
 				userName.setText(data.publisherName);
 				userType.setText(data.publisherType);
 				time.setText(data.publishTime);

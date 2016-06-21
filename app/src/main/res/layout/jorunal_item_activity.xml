@@ -34,7 +34,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="报告内容"
             android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
@@ -285,8 +284,9 @@
             </LinearLayout>
 
             <RelativeLayout
+                android:id="@+id/vocieRL"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="44dp"
                 android:layout_marginBottom="30dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"

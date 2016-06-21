@@ -19,7 +19,7 @@
 
         <TextView
             android:id="@+id/dayTitle"
-            android:visibility="gone"
+            android:text="E-秀秀"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
