@@ -34,6 +34,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Proto
 		if(getIntent().hasExtra("isFirstTime")){
 			isFirstTime = getIntent().getBooleanExtra("isFirstTime", false);
 		}
+
 		
 		userNameEdit = (EditText) findViewById(R.id.login_username);
 		passwordEdit = (EditText) findViewById(R.id.login_password);
@@ -43,6 +44,15 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Proto
 		findViewById(R.id.forgetPassword).setOnClickListener(this);
 		findViewById(R.id.submit).setOnClickListener(this);
 		findViewById(R.id.register).setOnClickListener(this);
+
+		if(sp.getBoolean("hasLogin",false)){
+			userNameStr = sp.getString("userName","");
+			passwordStr = sp.getString("password","");
+			checkBox.setChecked(true);
+			userNameEdit.setText(userNameStr);
+			passwordEdit.setText(passwordStr);
+			userNameEdit.setSelection(userNameStr.length());
+		}
 	}
 
 	@Override
@@ -131,9 +141,10 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Proto
 		if(obj != null && obj instanceof UserLoginResponseData){
 			UserLoginResponseData countreq=(UserLoginResponseData)obj;
 			if(countreq.commonData.result_code.equals("0") || countreq.commonData.result_code.equals("0000")){
-				editor.putBoolean("hasLogin", checkBox.isChecked());
-				editor.putString("userName", userNameStr);
-				editor.commit();
+				sp.edit().putBoolean("hasLogin", checkBox.isChecked());
+				sp.edit().putString("userName", userNameStr);
+				sp.edit().putString("password", passwordStr);
+				sp.edit().commit();
 
 				application.isLogin = true;
 				application.userName = userNameStr;

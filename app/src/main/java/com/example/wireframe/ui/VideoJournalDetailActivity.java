@@ -671,9 +671,9 @@ public class VideoJournalDetailActivity extends BaseActivity implements Protocal
                             myHomeWork.setVisibility(View.INVISIBLE);
                             hasSended = false;
 
-                            editor.putBoolean("workId" + workId, true);
-                            editor.putString("workId" + workId + "sound", soundFile.getAbsolutePath());
-                            editor.commit();
+                            sp.edit().putBoolean("workId" + workId, true);
+                            sp.edit().putString("workId" + workId + "sound", soundFile.getAbsolutePath());
+                            sp.edit().commit();
                             endProgress();
                             //TODO
                             startRequest();

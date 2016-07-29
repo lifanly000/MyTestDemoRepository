@@ -257,6 +257,10 @@
             android:configChanges="orientation|keyboardHidden|screenSize" >
         </activity>
         <activity
+            android:name="com.example.wireframe.ui.mycenter.UserProtocalActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
             android:name="com.example.wireframe.ui.WebActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" >
         </activity>

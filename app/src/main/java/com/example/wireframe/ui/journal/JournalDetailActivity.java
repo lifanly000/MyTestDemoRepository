@@ -510,10 +510,10 @@ public class JournalDetailActivity extends BaseActivity implements
 						sendMyHomework.setVisibility(View.INVISIBLE);
 						
 						hasSended =false;
-						
-						editor.putBoolean("workId"+workId, true);
-						editor.putString("workId"+workId+"sound", soundFile.getAbsolutePath());
-						editor.commit();
+
+						sp.edit().putBoolean("workId"+workId, true);
+						sp.edit().putString("workId"+workId+"sound", soundFile.getAbsolutePath());
+						sp.edit().commit();
 						endProgress();
 						Toast.makeText(JournalDetailActivity.this, "发送成功。", 0).show();
 					}else{

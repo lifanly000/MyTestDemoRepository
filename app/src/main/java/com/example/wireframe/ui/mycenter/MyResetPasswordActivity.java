@@ -80,6 +80,7 @@ public class MyResetPasswordActivity extends BaseActivity implements
 			ResetPasswordResponseData data = (ResetPasswordResponseData)obj;
 			if(data.commonData.result_code.equals("0") || data.commonData.result_code.equals("0000")){
 				Toast.makeText(this, "修改密码成功。", 0).show();
+				finish();
 			}
 		}
 	}

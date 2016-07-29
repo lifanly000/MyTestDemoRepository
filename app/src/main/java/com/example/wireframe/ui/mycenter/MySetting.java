@@ -134,11 +134,11 @@ public class MySetting extends BaseActivity implements OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.exit://安全退出
-                editor.putBoolean("hasLogin", false);
-                editor.putString("userName", "");
-                editor.commit();
-                application.isLogin = false;
-                application.userName = "";
+//                sp.edit().putBoolean("hasLogin", false);
+//                sp.edit().putString("userName", "");
+//                sp.edit().commit();
+//                application.isLogin = false;
+//                application.userName = "";
                 intent = new Intent(this, LoginActivity.class);
 //			intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);

@@ -66,7 +66,8 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Pr
 			startActivityForResult(intent, 10010);
 			break;
 		case R.id.prototalText: //用户协议
-			
+			intent = new Intent(this,UserProtocalActivity.class);
+			startActivity(intent);
 			break;
 		case R.id.submit: //注册
 			gotoRegister();
@@ -234,9 +235,9 @@ public class RegisterActivity extends BaseActivity implements OnClickListener,Pr
 			UserRegisterResponseData smsResponse=(UserRegisterResponseData)obj;
 			if(smsResponse.commonData.result_code.equals("0") || smsResponse.commonData.result_code.equals("0000")){
 				Toast.makeText(this,  "注册成功！", Toast.LENGTH_SHORT).show();
-				editor.putBoolean("hasLogin", true);
-				editor.putString("userName", userNameStr);
-				editor.commit();
+				sp.edit().putBoolean("hasLogin", true);
+				sp.edit().putString("userName", userNameStr);
+				sp.edit().commit();
 				application.isLogin = true ;
 				application.userName = userNameStr ;
 				setResult(100);

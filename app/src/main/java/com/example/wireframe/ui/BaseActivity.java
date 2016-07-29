@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -27,7 +26,7 @@ public class BaseActivity extends Activity {
 	
 	protected Application application;
 	protected SharedPreferences sp ;
-	protected Editor editor ;
+//	protected Editor editor ;
 	protected int screen_width = 0; //屏幕宽度
 	private static boolean isFirst = true ;
 	
@@ -93,15 +92,12 @@ public class BaseActivity extends Activity {
 		if(sp == null){
 			sp = getSharedPreferences("config", MODE_PRIVATE);
 		}
-		if(editor ==null){
-			editor = sp.edit();
-		}
 		if(isFirst){
 			initImageLoader();
 			if(!sp.contains("hasLogin")){
-				editor.putBoolean("hasLogin", false);
-				editor.putString("userName", "");
-				editor.commit();
+				sp.edit().putBoolean("hasLogin", false);
+				sp.edit().putString("userName", "");
+				sp.edit().commit();
 			}else if(sp.getBoolean("hasLogin", false)){
 				application.isLogin = true ;
 				application.userName = sp.getString("userName", "");

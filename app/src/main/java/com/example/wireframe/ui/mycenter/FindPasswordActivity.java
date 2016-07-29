@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -93,6 +94,7 @@ public class FindPasswordActivity extends BaseActivity implements OnClickListene
 			engine.startRequest(SchemaDef.GET_VERI_CODE, smsRequest);
 			break;
 		case 2://
+			startProgress();
 			ProtocalEngine engine2 = new ProtocalEngine(this);
 			engine2.setObserver(this);
 			FindPasswordRequestData data=new FindPasswordRequestData();
@@ -164,10 +166,12 @@ public class FindPasswordActivity extends BaseActivity implements OnClickListene
 
 	@Override
 	public void OnProtocalFinished(Object obj) {
+		endProgress();
 		if(obj != null && obj instanceof GetVeriCodeResponseData ){
 			GetVeriCodeResponseData smsResponse=(GetVeriCodeResponseData)obj;
 			if(smsResponse.commonData.result_code.equals("0") || smsResponse.commonData.result_code.equals("0000")){
 				veriCodeStr=smsResponse.code;
+				Log.i("aaaaa",veriCodeStr);
 				Toast.makeText(this,  "请注意查收短信验证码！", Toast.LENGTH_SHORT).show();
 			}else{
 				Toast.makeText(this, 
