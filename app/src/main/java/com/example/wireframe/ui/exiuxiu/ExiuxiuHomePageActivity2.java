@@ -1,10 +1,5 @@
 package com.example.wireframe.ui.exiuxiu;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -29,8 +24,15 @@ import com.example.wireframe.protocal.protocalProcess.model.Banner;
 import com.example.wireframe.protocal.protocalProcess.model.EXiuxiuHomePageResponseData;
 import com.example.wireframe.ui.BaseActivity;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+
+/**
+ * 无用
+ */
 public class ExiuxiuHomePageActivity2 extends BaseActivity implements
 		ProtocalEngineObserver {
 

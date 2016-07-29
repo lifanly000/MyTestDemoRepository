@@ -17,6 +17,13 @@
          <item name="android:windowNoTitle">true</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+
+    <!--闪屏页-->
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        Customize your theme here.
+        <item name="android:windowBackground">@drawable/first_enter_in</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
     
      <style name="Tab_host">
         <item name="android:windowContentOverlay">@null</item>

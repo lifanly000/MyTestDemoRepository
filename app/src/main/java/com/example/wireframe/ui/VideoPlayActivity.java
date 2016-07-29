@@ -222,6 +222,7 @@ public class VideoPlayActivity extends BaseActivity implements ProtocalEngineObs
 			startZanAndCommentRequest("1","","");
 			break;
 		case R.id.commentLL:
+			toSomeBody="";
 			showComment();
 			break;
 		case R.id.btn_send:

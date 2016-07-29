@@ -9,8 +9,8 @@ android {
         applicationId "com.eblock.emama"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 22
-        versionName "1.2.3"
+        versionCode 23
+        versionName "1.1"
     }
 
     buildTypes {
